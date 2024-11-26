@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Container from '@/components/Container';
 import { GetData } from '@/Helpers';
@@ -10,10 +9,8 @@ import { ProductType } from '../../../../type';
 import Image from 'next/image';
 import { paymentImage } from '@/assets';
 
-
-
 export default async function ProductDetails({ params }: { params: { id: string } }) {
-    const { id } =await params;
+    const { id } = params; // No need to await params
 
     // Fetch product details using the provided id
     const endpoint = `https://dummyjson.com/products/${id}`;
@@ -59,9 +56,9 @@ export default async function ProductDetails({ params }: { params: { id: string 
                     </span>
                     <AddToCartButton product={product} />
                 </div>
-                <div className='mt-4 bg-[#f7f7f7] flex flex-col items-center gap-y-2 rounded-lg mb-4 pt-2'>
-                    <Image src={paymentImage} className='object-cover w-auto' alt='paymentImage' />
-                    <p className='font-bold mt-2'>
+                <div className="mt-4 bg-[#f7f7f7] flex flex-col items-center gap-y-2 rounded-lg mb-4 pt-2">
+                    <Image src={paymentImage} className="object-cover w-auto" alt="paymentImage" />
+                    <p className="font-bold mt-2">
                         Guaranteed safe & secure checkout
                     </p>
                 </div>
@@ -69,5 +66,3 @@ export default async function ProductDetails({ params }: { params: { id: string 
         </Container>
     );
 }
-
-
