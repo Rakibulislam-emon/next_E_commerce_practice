@@ -13,7 +13,7 @@ import { paymentImage } from '@/assets';
 
 
 export default async function ProductDetails({ params }: { params: { id: string } }) {
-    const { id } = params;
+    const { id } =await params;
 
     // Fetch product details using the provided id
     const endpoint = `https://dummyjson.com/products/${id}`;
