@@ -9,17 +9,23 @@ import { ProductType } from '../../../../type';
 import Image from 'next/image';
 import { paymentImage } from '@/assets';
 
-type Props = {
-  params: { id: string };
-};
+interface ProductDetailsProps {
+  params: {
+    id: string;
+  };
+}
 
-export default async function ProductDetails({ params }: Props) {
+export default async function ProductDetails({ params }: ProductDetailsProps) {
   const { id } = params;
 
   // Fetch product details using the provided id
   const endpoint = `https://dummyjson.com/products/${id}`;
-  const product: ProductType = await GetData(endpoint);
+  const product: ProductType | null = await GetData(endpoint);
 
+  if (!product) {
+      return <div>Error loading product details. Please try again later.</div>;
+  }
+  
   const savingPrice = (product.discountPercentage * product.price) / 100;
 
   return (
