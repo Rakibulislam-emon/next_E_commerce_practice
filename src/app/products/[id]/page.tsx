@@ -10,13 +10,9 @@ import { ProductType } from '../../../../type';
 import Image from 'next/image';
 import { paymentImage } from '@/assets';
 
-interface Props {
-    params: {
-        id: string;
-    };
-}
 
-export default async function ProductDetails({ params }: Props) {
+
+export default async function ProductDetails({ params }: { params: { id: string } }) {
     const { id } = params;
 
     // Fetch product details using the provided id
@@ -69,7 +65,7 @@ export default async function ProductDetails({ params }: Props) {
                         Guaranteed safe & secure checkout
                     </p>
                 </div>
-            </div>            
+            </div>
         </Container>
     );
 }
