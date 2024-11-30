@@ -29,7 +29,7 @@ export default function ProductsCard({products}:{products : ProductType}) {
       {/* Product Price*/}
       <ProductPrice product={products} />
       {/* Product Add Too Cart*/}
-      <AddToCartButton />
+      <AddToCartButton product={products} />
     </div>
     </div>
   </div>

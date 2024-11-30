@@ -9,17 +9,15 @@ import { ProductType } from '../../../../type';
 import Image from 'next/image';
 import { paymentImage } from '@/assets';
 
-interface ProductDetailsProps {
-    params: { id: string };
-}
 
-export default async function ProductDetails({ params }: ProductDetailsProps) {
-    const { id } = params;
+
+export default async function ProductDetails({ params }: {params: {id:string}}) {
+    const id = params.id;
+    console.log('id from 18:', id)
 
     // Fetch product details using the provided id
     const endpoint = `https://dummyjson.com/products/${id}`;
     const product: ProductType = await GetData(endpoint);
-
     if (!product) {
         return <div>Error loading product details. Please try again later.</div>;
     }

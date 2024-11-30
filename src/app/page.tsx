@@ -8,7 +8,7 @@ import ProductList from '@/components/Products/ProductList';
 export default async function page() {
   const endpoint = "https://dummyjson.com/products";
   const {products} = await GetData(endpoint);
- 
+
 
   return (
     <div>
