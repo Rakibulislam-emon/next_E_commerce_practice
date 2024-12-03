@@ -55,8 +55,9 @@ export interface UserInfo {
   }
   
   export interface StateType {
-    shopy: {
+    shofy: {
       cart: ProductType[];
+      favorite: ProductType[]
       userInfo: UserInfo | null; // Nullable if no user is logged in
     };
   }

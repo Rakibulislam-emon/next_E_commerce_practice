@@ -35,6 +35,7 @@ function DetailProductImage({ images }: Props) {
       {/* Main Large Image */}
       <div className='bg-gray-100 rounded-md ml-5 w-full max-h-[550px]'>
         <Image
+          priority={true}
           src={currentImage} // Use currentImage for the large image
           alt="Main Product Image"
           width={500}
